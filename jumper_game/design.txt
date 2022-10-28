@@ -1,0 +1,98 @@
+game design
+
+The classes:
+
+class words
+ responsibility: 
+    to horld a list of 10 words and chose a word randomly.
+ behaviors:
+    -choose random word
+ state:
+    list of 10 words
+--------------------------------
+    (attributes)
+    word_list: 10 words 
+
+    (methods)
+    random_word() 
+    _init_(self)
+
+
+
+class puzzle
+ responsibility:
+    to replace letters of a word with lines and display the letter when it is guessed. 
+ behaviors:
+    -display lines
+    -guess letters
+    -display letter
+ state:
+    -length of word
+------------------------------------
+    (attributes)
+    word_length 
+    lines
+    letter
+
+    (methods)
+    _init_()
+    count_letters()
+    display_lines()
+    display_letter()
+
+
+
+class parachute:
+ responsibility:
+    display lines in a form of parachute that represent the number of guesses
+ behaviors:
+    -display parachute
+    -remove line
+ state:
+    -number of guesses
+---------------------------------------
+    (attributes)
+    number_guesses
+    validation
+
+    (methods)
+    _init_(self)
+    display_parachutes()
+    evaluate_guess()
+    
+
+class director
+ responsibility:
+    display a welcome message and start the game
+ behaviors:
+    -start game
+    -stop game
+ state:
+    -length of word
+    -number of guesses
+---------------------------------------------
+    (attributes)
+    play_again
+    user_guess
+
+    (methods)
+    _init_()
+    start_game()
+    resume_game()
+    
+    
+Relationship between the objets:
+
+    In this program, the object "words" choose and return from a list a random word.
+The object "puzzle" take that word and count the number of letters and replace them 
+with lines. The uses is asked to guess letters. If the guess is true the letter appear.
+The object "parachute" displays a person with a parachute (made with lines) when in the 
+object "puzzle" the guess of a letter is false on line of the parachute is removed.The 
+maximum of guesses depends on the length of the word.
+Then the object "director" contains and displays all the previous objects and offer an 
+interface of the game.
+
+To apply the principle of encapsulation, I will make all the attributes and methods of 
+the class"words" and class "puzzle" private.
+I am not sure at this time how all will work globally but the idea is clear in my mind. 
+I need to protect those information so that they can not be accessed or be modified.
